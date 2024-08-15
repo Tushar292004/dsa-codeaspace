@@ -37,8 +37,8 @@ public class WildcardMatching {
 
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        String s = scan.nextLine();
         String p = scan.nextLine();
+        String s = scan.nextLine();
         System.out.println(solution(s, p));
     }
 
