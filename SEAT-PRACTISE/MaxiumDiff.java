@@ -15,9 +15,6 @@ public class MaxiumDiff {
             sum += arr[i];
          }
        }
-
        System.out.println("Maximum Difference is: " + (sum - arr[0]));
     }
-
-
 }
