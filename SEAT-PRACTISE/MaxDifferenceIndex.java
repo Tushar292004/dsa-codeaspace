@@ -11,6 +11,19 @@ public class MaxDifferenceIndex {
 
         int result = MaxDifference(n, heights);
         System.out.println(result);
+
+        // one way to approach the problem 
+        int endIndex = 0;
+        int minDiff = Integer.MIN_VALUE ;
+        for(int i = 0;i < n-1; i++){
+            if( heights[i+1] > heights[i]){
+                if( (heights[i+1] - heights[i]) >= minDiff){
+                    minDiff = heights[i+1] - heights[i];
+                    endIndex = i+1;
+                }
+            }
+        }
+        System.out.println(endIndex);
     }
 
     public static int MaxDifference(int n, int[] heights) {
