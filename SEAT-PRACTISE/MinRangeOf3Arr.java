@@ -1,5 +1,4 @@
 import java.util.*;
-
 public class MinRangeOf3Arr {
     public static void main(String[] args) {
         Scanner scan  = new Scanner(System.in);
@@ -24,7 +23,7 @@ public class MinRangeOf3Arr {
         }
         System.out.println(Arrays.toString(arr3));
 
-         // Initialize variables
+        //finding the range
          int diff = Integer.MAX_VALUE;
          int minRangeStart = 0, minRangeEnd = 0;
          int i = 0, j = 0, k = 0;
@@ -45,8 +44,7 @@ public class MinRangeOf3Arr {
              else if (arr2[j] == minimum) j++;
              else k++;
          }
- 
-         // Output the smallest range with two numbers
+
          System.out.println("(" + minRangeStart + ", " + minRangeEnd + ")");
      }
 
