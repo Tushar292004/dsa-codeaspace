@@ -12,43 +12,21 @@ public class MaxDifferenceIndex {
         int result = MaxDifference(n, heights);
         System.out.println(result);
 
-        // one way to approach the problem 
-        int endIndex = 0;
-        int minDiff = Integer.MIN_VALUE ;
-        for(int i = 0;i < n-1; i++){
-            if( heights[i+1] > heights[i]){
-                if( (heights[i+1] - heights[i]) >= minDiff){
-                    minDiff = heights[i+1] - heights[i];
-                    endIndex = i+1;
+    }
+
+    public static int MaxDifference(int n, int[] nums) {
+        int diff = Integer.MIN_VALUE; // Use Integer.MIN_VALUE instead of -sys.maxsize
+        
+        if (nums.length == 0) {
+            return diff; // Return if the list is empty
+        }
+
+        for (int i = 0; i < nums.length; i++) {
+            for (int j = nums.length - 1; j > i; j--) {
+                if (nums[j] > nums[i] && diff < (j - i)) {
                 }
             }
         }
-        System.out.println(endIndex);
-    }
-
-    public static int MaxDifference(int n, int[] heights) {
-        if (n < 2) {
-            return -1;
-        }
-
-        int minHeight = heights[0];
-        int minIndex = 0;
-        int maxDifference = Integer.MIN_VALUE;
-        int endIndex = -1;
-
-        for (int i = 0; i < n; i++) {
-            int height = heights[i];
-            int currrentDiff = height - minHeight;
-            if (currrentDiff > maxDifference) {
-                maxDifference = currrentDiff;
-                endIndex = i;
-            }
-
-            if (height < minHeight) {
-                minHeight = height;
-                minIndex = i;
-            }
-        }
-        return endIndex;
+        return diff;
     }
 }
