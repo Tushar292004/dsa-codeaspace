@@ -1,6 +1,23 @@
 package linkedList;
 
 public class SinglyLinkedlist {
+    // structure of a node
+    private class Node {
+        private int value;
+        private Node next; // creates an next node
+
+        // constructor
+        public Node(int value) {
+            this.value = value;
+        }
+
+        // constructor
+        public Node(int value, Node next) {
+            this.value = value;
+            this.next = next;
+        }
+    }
+
     // Structure of linked list
     private Node head;
     private Node tail;
@@ -111,22 +128,5 @@ public class SinglyLinkedlist {
             temp = temp.next;
         }
         System.out.println("END");
-    }
-
-    // structure of a node
-    private class Node {
-        private int value;
-        private Node next; // creates an next node
-
-        // constructor
-        public Node(int value) {
-            this.value = value;
-        }
-
-        // constructor
-        public Node(int value, Node next) {
-            this.value = value;
-            this.next = next;
-        }
     }
 }
